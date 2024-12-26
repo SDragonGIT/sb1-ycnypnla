@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Meditation" />
+    <GridLayout>
+        <!-- Background Animation Container -->
+        <ContentView id="animationContainer">
+            <Image src="~/assets/images/seashell.gif" 
+                   stretch="aspectFill" 
+                   class="meditation-bg"/>
+        </ContentView>
+        
+        <StackLayout class="p-4 text-center">
+            <Label text="🕉️ Tune into Higher Power" 
+                   class="text-2xl font-bold mb-4 text-white"/>
+            <Label text="Om Gum Ganapataye Namaha" 
+                   class="text-xl mb-4 text-white"/>
+            <Label text="Take deep breaths and focus on your question..." 
+                   class="text-lg text-white" 
+                   textWrap="true"/>
+            
+            <Button text="Begin Analysis" 
+                    tap="{{ beginAnalysis }}" 
+                    class="btn btn-primary mt-8"
+                    visibility="{{ meditationComplete ? 'visible' : 'collapsed' }}"/>
+        </StackLayout>
+    </GridLayout>
+</Page>

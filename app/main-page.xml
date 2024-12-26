@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Astrology &amp; Numerology" />
+    
+    <GridLayout rows="*" columns="*">
+        <ScrollView>
+            <StackLayout class="p-4">
+                <Label text="Welcome to Astrology App" class="text-2xl text-center font-bold mb-4"/>
+                
+                <Button text="Birth Chart Analysis" tap="{{ navigateToBirthChart }}" 
+                    class="btn btn-primary mb-2"/>
+                
+                <Button text="Numerology Calculator" tap="{{ navigateToNumerology }}"
+                    class="btn btn-primary mb-2"/>
+                
+                <Button text="Kerala Prashna" tap="{{ navigateToPrashna }}"
+                    class="btn btn-primary mb-2"/>
+                
+                <Label text="Explore different systems of astrology and numerology"
+                    class="text-center text-gray-500 mt-4" textWrap="true"/>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+</Page>

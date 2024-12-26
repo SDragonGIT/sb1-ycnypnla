@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="User Registration" />
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Please Register" class="text-xl font-bold mb-4"/>
+            
+            <Label text="* Required fields" class="text-sm text-gray-500 mb-4"/>
+            
+            <TextField hint="Full Name *" 
+                text="{{ name }}" 
+                class="input mb-2"
+                autocorrect="false"/>
+            
+            <ListPicker items="{{ genderOptions }}"
+                selectedIndex="{{ selectedGenderIndex }}"
+                class="mb-2"
+                hint="Select Sex *"/>
+            
+            <TextField hint="Birth Place *" 
+                text="{{ birthPlace }}" 
+                class="input mb-2"/>
+            
+            <TextField hint="Birth Time (HH:MM) *" 
+                text="{{ birthTime }}" 
+                class="input mb-2"/>
+            
+            <TextField hint="Email (Optional)" 
+                text="{{ email }}" 
+                keyboardType="email"
+                autocorrect="false"
+                autocapitalizationType="none"
+                class="input mb-2"/>
+            
+            <Button text="Continue" 
+                tap="{{ register }}" 
+                isEnabled="{{ isFormValid }}"
+                class="btn btn-primary mb-2"/>
+
+            <Label text="- OR -" class="text-center text-gray-500 my-2"/>
+                
+            <Button text="Sign in with Google" 
+                tap="{{ signInWithGoogle }}"
+                class="btn btn-outline"/>
+                
+            <Label text="{{ errorMessage }}" 
+                visibility="{{ hasError ? 'visible' : 'collapsed' }}"
+                class="text-red-500 mt-2"
+                textWrap="true"/>
+        </StackLayout>
+    </ScrollView>
+</Page>
